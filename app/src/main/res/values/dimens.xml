@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="paddingScreen">40dp</dimen>
+    <dimen name="paddingObjects">10dp</dimen>
+    <dimen name="marginObjects">20dp</dimen>
+</resources>

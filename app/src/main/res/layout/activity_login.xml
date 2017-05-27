@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.loginandsignup.LoginActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/paddingScreen"
+        android:paddingRight="@dimen/paddingScreen"
+
+        android:paddingTop="100dp">
+
+        <ImageView
+            android:id="@+id/activity_login_logo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/marginObjects">
+
+            <EditText
+                android:id="@+id/activity_login_edtemail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="@string/hintEmail"
+                android:text="@string/textEmail" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/marginObjects">
+
+            <EditText
+                android:id="@+id/activity_login_edtpassword"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="@string/hintPassword"
+                android:text="@string/textPassword" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/activity_login_btnlogin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/textLogin"
+            android:layout_margin="@dimen/marginObjects"
+            android:padding="@dimen/paddingObjects"
+            />
+        <TextView
+            android:id="@+id/activity_login_txtlink"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/link"
+            android:gravity="center"/>
+    </LinearLayout>
+
+
+</ScrollView>
