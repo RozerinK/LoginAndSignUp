@@ -2,5 +2,5 @@
 <resources>
     <dimen name="paddingScreen">40dp</dimen>
     <dimen name="paddingObjects">10dp</dimen>
-    <dimen name="marginObjects">20dp</dimen>
+    <dimen name="marginObjects">10dp</dimen>
 </resources>

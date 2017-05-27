@@ -1,19 +1,100 @@
 package com.loginandsignup;
 
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
 
-import com.google.firebase.database.FirebaseDatabase;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
 
-public class LoginActivity extends AppCompatActivity {
+import butterknife.ButterKnife;
+import butterknife.InjectView;
 
+public class LoginActivity extends AppCompatActivity implements View.OnClickListener, OnCompleteListener<AuthResult> {
 
-    private FirebaseDatabase db;
+// dont forget to remove loginactivity as a launcher on manifest.xml
+
+    String email;
+    ;
+    String password;
+    @InjectView(R.id.activity_login_edtemail)
+    EditText edtEmail;
+    @InjectView(R.id.activity_login_edtpassword)
+    EditText edtPassword;
+    @InjectView(R.id.activity_login_btnlogin)
+    Button btnLogin;
+    @InjectView(R.id.activity_login_txtlink)
+    TextView txtLink;
+    private FirebaseAuth auth = FirebaseAuth.getInstance();
+    private boolean isValid;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        ButterKnife.inject(this);
+        getSupportActionBar().hide();
 
+        initEvent();
+
+    }
+
+
+    public void initEvent() {
+
+
+        btnLogin.setOnClickListener(this);
+    }
+
+
+    @Override
+    public void onClick(View v) {
+        InputMethodManager imm = (InputMethodManager) getSystemService(getApplicationContext().INPUT_METHOD_SERVICE);
+//Hide:
+        imm.toggleSoftInput(InputMethodManager.HIDE_IMPLICIT_ONLY, 0);
+//Show
+        imm.toggleSoftInput(InputMethodManager.SHOW_IMPLICIT, 0);
+        validation();
+        if (isValid == true) {
+            btnLogin.setEnabled(true);
+            auth.signInWithEmailAndPassword(edtEmail.getText().toString(), edtPassword.getText().toString())
+                    .addOnCompleteListener(this);
+        } else
+            Toast.makeText(getApplicationContext(), "fill both of honey", Toast.LENGTH_LONG);
+
+    }
+
+    public void login() {
+
+
+    }
+
+    public boolean validation() {
+
+        email = String.valueOf(edtEmail.getText());
+        password = String.valueOf(edtPassword.getText());
+        if (!email.equals("") || !password.equals("")) {
+            isValid=false;
+
+        } else
+            isValid = true;
+        return isValid;
+    }
+
+    @Override
+    public void onComplete(@NonNull Task<AuthResult> task) {
+        if (task.isSuccessful()) {
+            Toast.makeText(getApplicationContext(), "kayıt başarılı", Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(getApplicationContext(), " que paso? do it again ", Toast.LENGTH_SHORT).show();
+        }
     }
 }

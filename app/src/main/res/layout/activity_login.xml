@@ -3,62 +3,72 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.loginandsignup.LoginActivity">
+    tools:context="com.loginandsignup.LoginActivity"
+    android:background="@color/colorBackGround">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/colorBackGround"
         android:orientation="vertical"
         android:paddingLeft="@dimen/paddingScreen"
-        android:paddingRight="@dimen/paddingScreen"
-
-        android:paddingTop="100dp">
+        android:paddingRight="@dimen/paddingScreen">
 
         <ImageView
+            android:src="@drawable/logo"
             android:id="@+id/activity_login_logo"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"/>
 
         <android.support.design.widget.TextInputLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/marginObjects">
 
             <EditText
                 android:id="@+id/activity_login_edtemail"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/hintEmail"
-                android:text="@string/textEmail" />
+                android:hint="@string/textEmail"
+                android:inputType="textEmailAddress"/>
         </android.support.design.widget.TextInputLayout>
 
         <android.support.design.widget.TextInputLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/marginObjects">
 
             <EditText
                 android:id="@+id/activity_login_edtpassword"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/hintPassword"
-                android:text="@string/textPassword" />
+                android:inputType="numberPassword"
+                android:maxLength="6"
+
+                />
         </android.support.design.widget.TextInputLayout>
 
         <android.support.v7.widget.AppCompatButton
             android:id="@+id/activity_login_btnlogin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:enabled="true"
+            android:padding="@dimen/paddingObjects"
             android:text="@string/textLogin"
             android:layout_margin="@dimen/marginObjects"
-            android:padding="@dimen/paddingObjects"
+            android:textColor="@color/btntextcolor"
+            android:background="@color/btnColor"
             />
+
         <TextView
             android:id="@+id/activity_login_txtlink"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/link"
-            android:gravity="center"/>
+            android:gravity="center"
+            android:layout_margin="@dimen/marginObjects"
+            android:text="@string/link" />
     </LinearLayout>
 
 
