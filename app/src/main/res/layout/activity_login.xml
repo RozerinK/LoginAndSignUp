@@ -3,8 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.loginandsignup.LoginActivity"
-    android:background="@color/colorBackGround">
+    android:background="@color/colorBackGround"
+    tools:context="com.loginandsignup.LoginActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -15,11 +15,11 @@
         android:paddingRight="@dimen/paddingScreen">
 
         <ImageView
-            android:src="@drawable/logo"
             android:id="@+id/activity_login_logo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"/>
+            android:layout_gravity="center"
+            android:src="@drawable/logo" />
 
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
@@ -54,21 +54,22 @@
             android:id="@+id/activity_login_btnlogin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="@dimen/marginObjects"
+            android:background="@color/btnColor"
             android:enabled="true"
             android:padding="@dimen/paddingObjects"
             android:text="@string/textLogin"
-            android:layout_margin="@dimen/marginObjects"
             android:textColor="@color/btntextcolor"
-            android:background="@color/btnColor"
             />
 
         <TextView
             android:id="@+id/activity_login_txtlink"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
             android:layout_margin="@dimen/marginObjects"
-            android:text="@string/link" />
+            android:gravity="center"
+            android:text="@string/link"
+            android:textColorLink="@color/btnColor" />
     </LinearLayout>
 
 

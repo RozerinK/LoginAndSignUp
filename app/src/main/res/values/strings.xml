@@ -6,4 +6,5 @@
     <string name="link">Create an account </string>
     <string name="hintEmail">Email</string>
     <string name="hintPassword">Password</string>
+    <string name="progress_decs">authentication</string>
 </resources>
