@@ -1,18 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorBackGround"
+    android:background="@drawable/gradlogin"
+    android:clickable="true"
+    android:focusableInTouchMode="true"
     tools:context="com.loginandsignup.LoginActivity">
+    <!--to remove focus with touching anywhere on the page-->
 
     <LinearLayout
+
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/colorBackGround"
+        android:background="@drawable/gradlogin"
         android:orientation="vertical"
         android:paddingLeft="@dimen/paddingScreen"
-        android:paddingRight="@dimen/paddingScreen">
+        android:paddingRight="@dimen/paddingScreen"
+        android:weightSum="1">
 
         <ImageView
             android:id="@+id/activity_login_logo"
@@ -20,6 +25,14 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:src="@drawable/logo" />
+
+        <!--To remove focusable from edit box  add linear layout before edit text-->
+        <LinearLayout
+            android:layout_width="0px"
+            android:layout_height="0px"
+            android:focusable="true"
+            android:focusableInTouchMode="true" />
+
 
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
@@ -67,10 +80,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/marginObjects"
+            android:layout_weight="0.36"
             android:gravity="center"
             android:text="@string/link"
             android:textColorLink="@color/btnColor" />
     </LinearLayout>
 
 
-</ScrollView>
+</LinearLayout>

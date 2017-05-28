@@ -6,4 +6,8 @@
     <color name="colorBackGround">#cbff7a</color>
     <color name="btnColor">#79389f</color>
     <color name="btntextcolor">#faa009</color>
+    <color name="gradient_start">#DBD65C</color>
+    <color name="gradient_end">#7742bf</color>
+    <color name="gradient_start_signup">#f5a672</color>
+    <color name="gradient_end_signup">#4e557f</color>
 </resources>

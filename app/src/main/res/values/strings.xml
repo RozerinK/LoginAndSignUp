@@ -7,4 +7,7 @@
     <string name="hintEmail">Email</string>
     <string name="hintPassword">Password</string>
     <string name="progress_decs">authentication</string>
+    <string name="textSignUp">Sign Up</string>
+    <string name="textName">Name</string>
+    <string name="linkBack">Already have an account?</string>
 </resources>
