@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -24,7 +25,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 // dont forget to remove loginactivity as a launcher on manifest.xml
 
     String email;
-    ;
+
     String password;
     @InjectView(R.id.activity_login_edtemail)
     EditText edtEmail;
@@ -43,7 +44,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         setContentView(R.layout.activity_login);
         ButterKnife.inject(this);
         getSupportActionBar().hide();
-
+        this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
         initEvent();
 
     }
@@ -97,14 +98,18 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     @Override
     public void onComplete(@NonNull Task<AuthResult> task) {
         if (task.isSuccessful()) {
-            CustomProgressDialog dialog = new CustomProgressDialog(getApplicationContext());
-            dialog.setIndeterminate(true);
-            dialog.setCancelable(false);
-            // return dialog;
+            callProgress();
 
-            Toast.makeText(getApplicationContext(), "kayıt başarılı", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(getApplicationContext(), "kayıt başarılı", Toast.LENGTH_SHORT).show();
         } else {
             Toast.makeText(getApplicationContext(), " que paso? do it again ", Toast.LENGTH_SHORT).show();
         }
+    }
+
+    public CustomProgressDialog callProgress() {
+        CustomProgressDialog dialog = new CustomProgressDialog(getApplicationContext());
+        dialog.setIndeterminate(true);
+        dialog.setCancelable(false);
+        return dialog;
     }
 }

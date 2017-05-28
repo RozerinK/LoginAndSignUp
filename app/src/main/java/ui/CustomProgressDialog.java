@@ -30,7 +30,9 @@ public class CustomProgressDialog extends ProgressDialog {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.view_custom_progress_dialog);
         ImageView la = (ImageView) findViewById(R.id.animation);
-        la.setBackgroundResource(R.drawable.progressBar);
+        la.setBackgroundResource(R.drawable.progressbar);
         animationDrawable = (AnimationDrawable) la.getBackground();
+
+
     }
 }
